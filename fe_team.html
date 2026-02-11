@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fernanda Almeida | FE TEAM - Transformando vidas através do movimento</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="Captura de tela 2026-02-01 192103.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary-color: #e1306c;
+            --secondary-color: #333333;
+            --accent-color: #ff7b00;
+            --light-color: #f8f9fa;
+            --dark-color: #1a1a1a;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--secondary-color);
+            background-color: #fefefe;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--dark-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .logo span {
+            color: var(--primary-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--primary-color);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color) 0%, var(--accent-color) 100%);
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            background: linear-gradient(135deg, var(--dark-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 20px 0;
+            position: relative;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero h2 span {
+            color: var(--primary-color);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #c2185b;
+            transform: translateY(-3px);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: white;
+            color: var(--dark-color);
+            transform: translateY(-3px);
+        }
+        
+        /* About Section */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--dark-color);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background-color: var(--primary-color);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+        
+        .stats {
+            display: flex;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        /* Services Section */
+        .services {
+            background-color: #f8f9fa;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .service-card:hover .service-img img {
+            transform: scale(1.05);
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        .service-content p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        /* Testimonials - NOVO DESIGN */
+        .testimonials-container {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        .testimonials-wrapper {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .testimonial {
+            flex: 0 0 100%;
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            margin: 0 10px;
+        }
+        
+        .testimonial-text {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 30px;
+            color: #555;
+            line-height: 1.8;
+            position: relative;
+            padding: 0 20px;
+        }
+        
+        .testimonial-text:before,
+        .testimonial-text:after {
+            content: '"';
+            font-size: 3rem;
+            color: var(--primary-color);
+            opacity: 0.3;
+            position: absolute;
+        }
+        
+        .testimonial-text:before {
+            top: -20px;
+            left: 0;
+        }
+        
+        .testimonial-text:after {
+            bottom: -40px;
+            right: 0;
+        }
+        
+        .client-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .client-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--primary-color);
+        }
+        
+        .client-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .client-details {
+            text-align: left;
+        }
+        
+        .client-name {
+            font-weight: 700;
+            color: var(--dark-color);
+            font-size: 1.1rem;
+        }
+        
+        .client-goal {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+        
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+            gap: 20px;
+        }
+        
+        .testimonial-dots {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ddd;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .testimonial-dot.active {
+            background-color: var(--primary-color);
+            transform: scale(1.2);
+        }
+        
+        .testimonial-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .testimonial-btn:hover {
+            background-color: #c2185b;
+            transform: translateY(-3px);
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #c2185b 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+        }
+        
+        .cta h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #1da851;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: white;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-color);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #444;
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h2 {
+                font-size: 2.3rem;
+            }
+            
+            .testimonials-container {
+                max-width: 700px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--dark-color);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                gap: 0;
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: all 0.3s;
+                z-index: 999;
+            }
+            
+            nav ul.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            
+            nav ul li {
+                width: 100%;
+                text-align: center;
+                padding: 15px 0;
+                border-bottom: 1px solid #333;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .testimonial {
+                padding: 30px 20px;
+            }
+            
+            .testimonial-text {
+                font-size: 1.1rem;
+            }
+            
+            .client-info {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .client-details {
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .testimonial-text {
+                padding: 0 10px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <h1>FE<span>TEAM</span></h1>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#services">Planos</a></li>
+                    <li><a href="#testimonials">Depoimentos</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h2>Transformando vidas através do <span>movimento</span></h2>
+            <p>Conheça sua melhor versão! Personal trainer especializada em criar planilhas de treino personalizadas para ajudar você a alcançar seus objetivos fitness.</p>
+            <div class="hero-btns">
+                <a href="#services" class="btn btn-primary">Ver Planos de Treino</a>
+                <a href="#contact" class="btn btn-secondary">Agendar Consultoria</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sobre Mim</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="fotof.png" alt="Fernanda Almeida">
+                </div>
+                <div class="about-text">
+                    <h3>Fernanda Almeida | FE TEAM</h3>
+                    <p>Olá! Sou Fernanda Almeida, personal trainer e fundadora da FE TEAM. Minha missão é transformar vidas através do movimento, ajudando pessoas a descobrirem sua melhor versão.</p>
+                    <p>Com anos de experiência na área do fitness, desenvolvi metodologias eficazes que combinam treinamento físico, nutrição e bem-estar mental para resultados duradouros.</p>
+                    
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-number">599</div>
+                            <div class="stat-label">Seguidores</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">4</div>
+                            <div class="stat-label">Anos de Experiência</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">162</div>
+                            <div class="stat-label">Clientes Atendidos</div>
+                        </div>
+                    </div>
+                    
+                    <p>Minha abordagem é personalizada para atender às necessidades individuais de cada aluno, seja para emagrecimento, ganho de massa muscular ou melhora da qualidade de vida.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Planos de Treino</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="ChatGPT Image 1 de fev. de 2026, 18_31_50.png" alt="Treino para Iniciantes">
+                    </div>
+                    <div class="service-content">
+                        <h3>Plano Iniciante</h3>
+                        <p>✅Consultoria atualizada e personalizada <strong>durante dois meses</strong>.</p>
+                        <p>➔Você que nunca treinou ou está parado há muito tempo.<br>➔Tem medo de errar ou se machucar.<br> ➔Quer algo simples e possível.</p>
+                        <div class="price">R$ 130,00</div>
+                        <a href="#contact" class="btn btn-primary">Quero este Plano</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="ChatGPT Image 1 de fev. de 2026, 19_02_06.png" alt="Treino Avançado">
+                    </div>
+                    <div class="service-content">
+                        <h3>Plano Avançado</h3>
+                        <p>✅Consultoria avançada e atualizada <strong>mensalmente</strong>.</p>
+                        <p>➔Treino esttruturado e eficiente.<br>➔Evolução de carga, performance ou hipertrofia.<br>➔Planejamento estratégico.</p>
+                       
+                        <div class="price">R$ 150,00/mês</div>
+                        <a href="#contact" class="btn btn-primary">Quero este Plano</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Depoimentos</h2>
+            </div>
+            <div class="testimonials-container">
+                <div class="testimonials-wrapper" id="testimonialsWrapper">
+                    <!-- Depoimento 1 -->
+                    <div class="testimonial">
+                        <div class="testimonial-text">
+                            "As planilhas da Fernanda mudaram minha vida! Em 3 meses perdi 8kg e ganhei muita disposição. A metodologia é incrível e o acompanhamento faz toda diferença!"
+                        </div>
+                        <div class="client-info">
+                            <div class="client-avatar">
+                                <img src="photo-1688888745596-da40843a8d45.avif" alt="Carolina Lima">
+                            </div>
+                            <div class="client-details">
+                                <div class="client-name">Carolina Lima</div>
+                                <div class="client-goal">Perdeu 8kg em 3 meses</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Depoimento 2 -->
+                    <div class="testimonial">
+                        <div class="testimonial-text">
+                            "Comecei sem acreditar que conseguiria, mas com a orientação da Fernanda vi resultados em apenas um mês! As planilhas são muito bem explicadas e o suporte é excelente."
+                        </div>
+                        <div class="client-info">
+                            <div class="client-avatar">
+                                <img src="photo-1602471615287-d733c59b79c4.avif" alt="Rafael Souza">
+                            </div>
+                            <div class="client-details">
+                                <div class="client-name">Rafael Souza</div>
+                                <div class="client-goal">Ganhou 5kg de massa muscular</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Depoimento 3 -->
+                    <div class="testimonial">
+                        <div class="testimonial-text">
+                            "Sou mãe de dois e achava que não teria tempo para me exercitar. A Fernanda montou um treino que se encaixa na minha rotina. Hoje tenho mais energia para meus filhos e me sinto renovada!"
+                        </div>
+                        <div class="client-info">
+                            <div class="client-avatar">
+                                <img src="premium_photo-1688350808212-4e6908a03925.avif" alt="Juliana Santos">
+                            </div>
+                            <div class="client-details">
+                                <div class="client-name">Juliana Santos</div>
+                                <div class="client-goal">Mãe ativa, + disposição</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Depoimento 4 -->
+                    <div class="testimonial">
+                        <div class="testimonial-text">
+                            "Após uma lesão no joelho, pensei que não voltaria a treinar. A Fernanda adaptou completamente meus treinos e hoje estou mais forte do que nunca! Profissional incrível!"
+                        </div>
+                        <div class="client-info">
+                            <div class="client-avatar">
+                                <img src="premium_photo-1689568126014-06fea9d5d341.avif" alt="Marcos Oliveira">
+                            </div>
+                            <div class="client-details">
+                                <div class="client-name">Marcos Oliveira</div>
+                                <div class="client-goal">Recuperação pós-lesão</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Depoimento 5 -->
+                    <div class="testimonial">
+                        <div class="testimonial-text">
+                            "A FE TEAM transformou minha relação com o exercício. De algo que eu odiava, agora é meu momento de prazer do dia. A evolução não é só física, é mental também!"
+                        </div>
+                        <div class="client-info">
+                            <div class="client-avatar">
+                                <img src="premium_photo-1731499365772-15a4edfe53c5.avif" alt="Amanda Costa">
+                            </div>
+                            <div class="client-details">
+                                <div class="client-name">Amanda Costa</div>
+                                <div class="client-goal">+20% de força em 2 meses</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-nav">
+                    <button class="testimonial-btn" id="prevTestimonial">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    
+                    <div class="testimonial-dots" id="testimonialDots">
+                        <!-- Dots serão gerados via JavaScript -->
+                    </div>
+                    
+                    <button class="testimonial-btn" id="nextTestimonial">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <h2>Pronto para transformar sua vida?</h2>
+            <p>Conheça sua melhor versão! Entre em contato agora mesmo e faça parte da FE TEAM.</p>
+            <a href="https://wa.me/5521984133869" target="_blank" class="btn whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> Fale comigo no WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>FE TEAM</h3>
+                    <p>Transformando vidas através do movimento. Conheça sua melhor versão com planilhas de treino personalizadas e acompanhamento especializado.</p>
+                    <div class="social-links">
+                        <a href="https://instagram.com/fernandaalmeida" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/5521984133869" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Links Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#about">Sobre</a></li>
+                        <li><a href="#services">Planos</a></li>
+                        <li><a href="#testimonials">Depoimentos</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contato</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone-alt"></i> (21) 98413-3869</li>
+                        <li><i class="fas fa-envelope"></i> fernanda13579@icloud.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Rio de Janeiro, Brasil</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 FE TEAM - Fernanda Almeida. Todos os direitos reservados.</p>
+                <p>Transformando vidas através do movimento.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+                mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Testimonials Carousel
+        const testimonialsWrapper = document.getElementById('testimonialsWrapper');
+        const prevBtn = document.getElementById('prevTestimonial');
+        const nextBtn = document.getElementById('nextTestimonial');
+        const dotsContainer = document.getElementById('testimonialDots');
+        
+        const testimonials = document.querySelectorAll('.testimonial');
+        let currentIndex = 0;
+        
+        // Create dots
+        testimonials.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('testimonial-dot');
+            if(index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => {
+                goToTestimonial(index);
+            });
+            dotsContainer.appendChild(dot);
+        });
+        
+        const dots = document.querySelectorAll('.testimonial-dot');
+        
+        function updateTestimonial() {
+            testimonialsWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+            
+            // Update dots
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+        
+        function goToTestimonial(index) {
+            currentIndex = index;
+            if(currentIndex >= testimonials.length) currentIndex = 0;
+            if(currentIndex < 0) currentIndex = testimonials.length - 1;
+            updateTestimonial();
+        }
+        
+        function nextTestimonial() {
+            currentIndex++;
+            if(currentIndex >= testimonials.length) currentIndex = 0;
+            updateTestimonial();
+        }
+        
+        function prevTestimonial() {
+            currentIndex--;
+            if(currentIndex < 0) currentIndex = testimonials.length - 1;
+            updateTestimonial();
+        }
+        
+        // Event listeners
+        nextBtn.addEventListener('click', nextTestimonial);
+        prevBtn.addEventListener('click', prevTestimonial);
+        
+        // Auto-rotate testimonials every 5 seconds
+        let autoRotate = setInterval(nextTestimonial, 5000);
+        
+        // Pause auto-rotate on hover
+        testimonialsWrapper.addEventListener('mouseenter', () => {
+            clearInterval(autoRotate);
+        });
+        
+        testimonialsWrapper.addEventListener('mouseleave', () => {
+            autoRotate = setInterval(nextTestimonial, 5000);
+        });
+    </script>
+</body>
+</html>
